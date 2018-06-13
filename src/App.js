@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import DogsListContainer from './components/DogsListContainer'
+import { Route } from 'react-router-dom'
 
 class App extends Component {
   render() {
@@ -12,7 +13,8 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <main>
-          <DogsListContainer />
+          <Route exact path='/' component={DogsListContainer} />
+          <Route path="/dog-breeds/:breed" component={DogBreedImages} />
         </main>
       </div>
     );
